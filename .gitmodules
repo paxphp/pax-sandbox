@@ -4,3 +4,6 @@
 [submodule "lib/twig"]
 	path = lib/twig
 	url = git://github.com/fabpot/Twig.git
+[submodule "lib/Symfony/Component/ClassLoader"]
+	path = lib/Symfony/Component/ClassLoader
+	url = https://github.com/symfony/ClassLoader
