@@ -1,11 +1,16 @@
 <?php
+require_once 'bootstrap.php';
 use dsx\PAX\Response;
-
-require_once 'lib/dsx/PAX/Responder.php';
-require_once 'lib/dsx/PAX/Response.php';
-require_once 'lib/dsx/PAX/Task.php';
 $oPAX=new Response();
-// $oPAX->html('body', 'test');
-// $oPAX->prepend('body', 'test2ä<div>ötest</div>');
-$oPAX->console('I am a test');
+$oTwig = new Twig_Environment(new Twig_Loader_Filesystem(__DIR__."/templates"));
+
+switch($_GET['do']){
+	case 'initPage':
+		$oPAX->html('body',$oTwig->render('body.html'));
+		break;
+	default:
+		$oPAX->console(var_export($_REQUEST, true));
+		break;
+}
+
 $oPAX->answer();

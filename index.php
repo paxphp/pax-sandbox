@@ -7,17 +7,17 @@
 <script type="text/javascript" src="lib/dsx/PAX/jquery.PAX.actions.js"></script>
 <script type="text/javascript">
 <!--
-	function send(){
-		$.ajax({
-				url: "ajax.php",
-			});
-	}
+	$.ajaxSetup({
+		url: "ajax.php",
+		});
+	$.ajax({
+		data: {"do":"initPage"}
+	});
 //-->
 </script>
 
 </head>
 <body>
-	<a href="#" onclick="send();return false;">Click</a>
-	<div id="target"></div>
+	
 </body>
 </html>
