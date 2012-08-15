@@ -65,7 +65,7 @@ $oPAX->answer();
 <pre class="php">
 //PHP - disable button
 $oPAX = new dsx\PAX\Response();
-$oPAX->unbind('button.example-attr','disabled', true);
+$oPAX->attr('button.example-attr', 'disabled', true);
 $oPAX->html('button.example-attr', 'Click (Disabled)');
 $oPAX->answer();
 </pre>
@@ -78,7 +78,7 @@ $oPAX->answer();
 <pre class="php">
 //PHP - enable button
 $oPAX = new dsx\PAX\Response();
-$oPAX->unbind('button.example-attr','disabled', false);
+$oPAX->attr('button.example-attr', 'disabled', false);
 $oPAX->html('button.example-attr', 'Click (Enabled)');
 $oPAX->answer();
 </pre>

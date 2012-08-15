@@ -14,7 +14,7 @@ switch(isset($_GET['do'])?$_GET['do']:null){
 		$oPAX->html('div.example-html',$_GET['content']);
 	break;
 	case 'bind':
-		$oPAX->bind('button.example-bind','click', 'alert("binding an Alert!")');
+		$oPAX->bind('button.example-bind', 'click', 'alert("binding an Alert!")');
 		$oPAX->html('button.example-bind', 'Click (ON)');
 	break;
 	case 'unbind':
@@ -22,11 +22,11 @@ switch(isset($_GET['do'])?$_GET['do']:null){
 		$oPAX->html('button.example-bind', 'Click (OFF)');
 	break;
 	case 'attr-disabled':
-		$oPAX->attr('button.example-attr','disabled', true);
+		$oPAX->attr('button.example-attr', 'disabled', true);
 		$oPAX->html('button.example-attr', 'Click (Disabled)');
 	break;
 	case 'attr-enabled':
-		$oPAX->attr('button.example-attr','disabled', false);
+		$oPAX->attr('button.example-attr', 'disabled', false);
 		$oPAX->html('button.example-attr', 'Click (Enabled)');
 	break;
 }
