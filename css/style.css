@@ -10,7 +10,8 @@ body{
 }
 div.head,
 div.foot,
-#content{
+#content,
+#toc{
 	padding: 10px;
 	width: 960px;
 	margin-left:auto;
@@ -21,9 +22,9 @@ div.head{
 	border: 1px solid transparent;
 	background-color: #000000;
 	border-radius: 0 0 20px 20px;
-	box-shadow: 0px 5px 1px #888, 0px 10px 6px #333;
-	
+	box-shadow: 0px 5px 1px #888, 0px 10px 6px #000;
 }
+
 div.head a,
 div.head a:LINK,
 div.head a:VISITED{
@@ -38,6 +39,7 @@ div.head .logo{
 	color: #2ad116;
 	font-size: x-large;
 	font-weight: bold;
+	float:left;
 }
 div.foot{
 	border-bottom: 1px solid #000000;
@@ -47,7 +49,9 @@ div.foot{
 ul.menu{
 	list-style: none;
 	margin:0;
+	margin-top:15px;
 	padding:0;
+	float:right;
 }
 ul.menu li{
 	float:left;
@@ -59,4 +63,35 @@ ul.menu li a{
 
 #content{
 	min-height: 350px;
+}
+
+#toc{
+/* 	top: 60px; */
+/*     left: 0px; */
+/*     height: 100%; */
+/*     position: fixed; */
+/*     width: 150px; */
+    padding-top: 20px;
+/*     z-index: 100; */
+    font-size: small;
+}
+
+#toc ul {
+	list-style:none; 
+	padding-left: 10px;
+}
+
+#toc a {
+}
+
+#toc .toc-h2 {
+    margin-left: 10px;
+}
+
+#toc .toc-h3 {
+    margin-left: 20px;
+}
+
+#toc .toc-active {
+    font-weight: bold;
 }
