@@ -12,16 +12,20 @@ switch(isset($_GET['do'])?$_GET['do']:null){
 	case 'about':
 		$oPAX->html('#content',$oTwig->render('pages/about.html'));
 		break;
-	case 'docs':
-		$oPAX->html('#content',$oTwig->render('pages/docs.html'));
+	case 'usage':
+		$oPAX
+			->html('#content',$oTwig->render('pages/usage.html'));
 		break;
 	case 'examples':
 		$oPAX->html('#content',$oTwig->render('pages/examples.html'));
-		$oPAX->script('$("pre.php").snippet("php",{style:"golden",showNum:false,menu:false});');
 		break;
 	default:
 		$oPAX->console(var_export($_REQUEST, true));
 		break;
 }
-
-$oPAX->answer();
+$oPAX
+	->script('$("pre.php").snippet("php",{style:"bipolar",showNum:false,menu:false});')
+	->script('$("pre.html").snippet("html",{style:"bipolar",showNum:false,menu:false});')
+	->script('$("pre.js").snippet("javascript",{style:"bipolar",showNum:false,menu:false});')
+	->script("$('#toc').toc({'onHighlight': function(el) {}});")
+	->answer();
