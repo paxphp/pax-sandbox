@@ -1,1 +1,25 @@
-<h1>Documentation</h1>
+<h1>Usage</h1>
+<h2>Basic Usage</h2>
+<h3>Initialization</h3>
+<pre class="html">{{'
+//HTML
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="lib/dsx/PAX/jquery.PAX.js"></script>
+'|e}}</pre>
+
+<h3>Submit a request</h3>
+<pre class="js">
+//JavaScript
+$.ajax({
+	url: 'ajax.php',
+	data: {"do":"something"}
+});	
+</pre>
+
+<h3>Answer the request</h3>
+<pre class="php">
+//PHP
+$oPAX = new dsx\PAX\Response();
+$oPAX->alert('$_GET['do']');
+$oPAX->answer();
+</pre>
