@@ -24,6 +24,10 @@ $oPAX = new dsx\PAX\Response();
 $oPAX->html('div.example-html', 'This should be shown in the div container!');
 $oPAX->answer();
 </pre>
+<pre class="html">
+//HTML
+&lt;div class="example example-html"&gt;&lt;/div&gt;
+</pre>
 <div class="example example-html"></div>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'html', content:'This should be shown in the div container!'}});return false;">execute demo</a>
 
@@ -34,6 +38,10 @@ $oPAX = new dsx\PAX\Response();
 $oPAX->bind('button.example-bind', 'click', 'alert("binding an Alert!")');
 $oPAX->html('button.example-bind', 'Click (ON)');
 $oPAX->answer();
+</pre>
+<pre class="html">
+//HTML
+&lt;button class="example example-bind"&gt;Click&lt;/button&gt;
 </pre>
 <button class="example example-bind">Click</button><br>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'bind'}}); return false;">execute demo</a>
@@ -46,6 +54,10 @@ $oPAX->unbind('button.example-bind', 'click');
 $oPAX->html('button.example-bind', 'Click (OFF)');
 $oPAX->answer();
 </pre>
+<pre class="html">
+//HTML
+&lt;button class="example example-bind"&gt;Click&lt;/button&gt;
+</pre>
 <button class="example example-bind">Click</button><br>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'unbind'}}); return false;">execute demo</a>
 
@@ -57,6 +69,10 @@ $oPAX->unbind('button.example-attr','disabled', true);
 $oPAX->html('button.example-attr', 'Click (Disabled)');
 $oPAX->answer();
 </pre>
+<pre class="html">
+//HTML
+&lt;button class="example example-attr"&gt;Click&lt;/button&gt;
+</pre>
 <button class="example example-attr">Click</button><br>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'attr-disabled'}}); return false;">Disabled button</a>
 <pre class="php">
@@ -65,6 +81,10 @@ $oPAX = new dsx\PAX\Response();
 $oPAX->unbind('button.example-attr','disabled', false);
 $oPAX->html('button.example-attr', 'Click (Enabled)');
 $oPAX->answer();
+</pre>
+<pre class="html">
+//HTML
+&lt;button class="example example-attr"&gt;Click&lt;/button&gt;
 </pre>
 <button class="example example-attr">Click</button><br>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'attr-enabled'}}); return false;">Enable button</a>
