@@ -1,90 +1,204 @@
 <h1>Examples</h1>
-<h2>console</h2>
-<pre class="php">
-//PHP
-$oPAX = new dsx\PAX\Response();
-$oPAX->console('This should be shown in the console!');
-$oPAX->answer();
-</pre>
-<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'console', content:'This should be shown in the console!'}});return false;">execute demo</a>
 
 <h2>alert</h2>
 <pre class="php">
 //PHP
-$oPAX = new dsx\PAX\Response();
+$oPAX = new dsx\pax\Response();
 $oPAX->alert('This should be shown in the alert box!');
 $oPAX->answer();
 </pre>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'alert', content:'This should be shown in the alert box!'}});return false;">execute demo</a>
 
+<h2>console</h2>
+<pre class="php">
+//PHP
+$oPAX = new dsx\pax\Response();
+$oPAX->console('This should be shown in the console!');
+$oPAX->answer();
+</pre>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'console', content:'This should be shown in the console!'}});return false;">execute demo</a>
+
 <h2>html</h2>
 <pre class="php">
 //PHP
-$oPAX = new dsx\PAX\Response();
+$oPAX = new dsx\pax\Response();
 $oPAX->html('div.example-html', 'This should be shown in the div container!');
 $oPAX->answer();
 </pre>
-<pre class="html">
+<pre class="html">{{'
 //HTML
-&lt;div class="example example-html"&gt;&lt;/div&gt;
-</pre>
+<div class="example example-html"></div>
+'|e}}</pre>
 <div class="example example-html"></div>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'html', content:'This should be shown in the div container!'}});return false;">execute demo</a>
 
 <h2>bind</h2>
 <pre class="php">
 //PHP
-$oPAX = new dsx\PAX\Response();
+$oPAX = new dsx\pax\Response();
 $oPAX->bind('button.example-bind', 'click', 'alert("binding an Alert!")');
 $oPAX->html('button.example-bind', 'Click (ON)');
 $oPAX->answer();
 </pre>
-<pre class="html">
+<pre class="html">{{'
 //HTML
-&lt;button class="example example-bind"&gt;Click&lt;/button&gt;
-</pre>
+<button class="example example-bind">Click</button>
+'|e}}</pre>
 <button class="example example-bind">Click</button><br>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'bind'}}); return false;">execute demo</a>
-
+	
 <h2>unbind</h2>
 <pre class="php">
 //PHP
-$oPAX = new dsx\PAX\Response();
+$oPAX = new dsx\pax\Response();
 $oPAX->unbind('button.example-bind', 'click');
 $oPAX->html('button.example-bind', 'Click (OFF)');
 $oPAX->answer();
 </pre>
-<pre class="html">
+<pre class="html">{{'
 //HTML
-&lt;button class="example example-bind"&gt;Click&lt;/button&gt;
-</pre>
+<button class="example example-bind">Click</button>
+'|e}}</pre>
 <button class="example example-bind">Click</button><br>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'unbind'}}); return false;">execute demo</a>
 
 <h2>attr</h2>
 <pre class="php">
 //PHP - disable button
-$oPAX = new dsx\PAX\Response();
+$oPAX = new dsx\pax\Response();
 $oPAX->attr('button.example-attr', 'disabled', true);
 $oPAX->html('button.example-attr', 'Click (Disabled)');
 $oPAX->answer();
 </pre>
-<pre class="html">
+<pre class="html">{{'
 //HTML
-&lt;button class="example example-attr"&gt;Click&lt;/button&gt;
-</pre>
+<button class="example example-attr">Click</button>
+'|e}}</pre>
 <button class="example example-attr">Click</button><br>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'attr-disabled'}}); return false;">Disabled button</a>
 <pre class="php">
 //PHP - enable button
-$oPAX = new dsx\PAX\Response();
+$oPAX = new dsx\pax\Response();
 $oPAX->attr('button.example-attr', 'disabled', false);
 $oPAX->html('button.example-attr', 'Click (Enabled)');
 $oPAX->answer();
 </pre>
-<pre class="html">
+<pre class="html">{{'
 //HTML
-&lt;button class="example example-attr"&gt;Click&lt;/button&gt;
-</pre>
+<button class="example example-attr">Click</button>
+'|e}}</pre>
 <button class="example example-attr">Click</button><br>
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'attr-enabled'}}); return false;">Enable button</a>
+
+<h2>append / prepend</h2>
+<pre class="php">
+//PHP
+$oPAX = new dsx\pax\Response();
+$oPAX->prepend('div.example-prepend', 'Prepend content');
+$oPAX->append('div.example-append', 'Append content');
+$oPAX->answer();
+</pre>
+<pre class="html">{{'
+//HTML
+<div class="example example-prepend">
+	<p>Content will be added before.</p>
+</div>
+<div class="example example-append">
+	<p>Content will be added after.</p>
+</div>
+'|e}}</pre>
+<div class="example example-prepend">
+	<p>Content will be added before.</p>
+</div>
+<div class="example example-append">
+	<p>Content will be added after.</p>
+</div>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'prependappend'}}); return false;">Execute demo</a>
+
+<h2>before / after</h2>
+<pre class="php">
+//PHP
+$oPAX = new dsx\pax\Response();
+$oPAX->before('div.example-before', 'Added before');
+$oPAX->after('div.example-after', 'Added after');
+$oPAX->answer();
+</pre>
+<pre class="html">{{'
+//HTML
+<div class="example example-before">
+	<p>Content will be added before.</p>
+</div>
+<div class="example example-after">
+	<p>Content will be added after.</p>
+</div>
+'|e}}</pre>
+<div class="example example-before">
+	<p>Content will be added before.</p>
+</div>
+<div class="example example-after">
+	<p>Content will be added after.</p>
+</div>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'beforeafter'}}); return false;">Execute demo</a>
+
+<h2>css</h2>
+<pre class="php">
+//PHP
+$oPAX = new dsx\pax\Response();
+$oPAX->css('div.example-css', 'background-color','red');
+$oPAX->css('div.example-css', 'color','white');
+$oPAX->append('div.example-css p', ' Styles applied!');
+$oPAX->answer();
+</pre>
+<pre class="html">{{'
+//HTML
+<div class="example example-css">
+	<p>CSS properties of thix box will be applied from the backend.</p>
+</div>
+'|e}}</pre>
+<div class="example example-css">
+	<p>CSS properties of thix box will be applied from the backend.</p>
+</div>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'css'}}); return false;">Apply style sheets</a>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'css-reset'}}); return false;">Reset style sheets</a>
+
+<h2>addClass / removeClass</h2>
+<pre class="php">
+//PHP
+$oPAX = new dsx\pax\Response();
+$oPAX->addClass('div.example-addClass', 'example-blue');
+$oPAX->removeClass('div.example-removeClass', 'example-blue');
+$oPAX->removeClass('div.example-removeClassAll');
+$oPAX->answer();
+</pre>
+<pre class="html">{{'
+//HTML
+<div class="example example-addClass">
+	<p>The class example-blue will be added.</p>
+</div>
+<div class="example example-removeClass example-blue">
+	<p>The class example-blue will be removed.</p>
+</div>
+<div class="example example-removeClassAll example-blue example-bold">
+	<p>The classes will be removed.</p>
+</div>
+'|e}}</pre>
+
+<div class="example example-addClass">
+	<p>The class example-blue will be added.</p>
+</div>
+<div class="example example-removeClass example-blue">
+	<p>The class example-blue will be removed.</p>
+</div>
+<div class="example example-removeClassAll example-blue example-bold">
+	<p>The classes will be removed.</p>
+</div>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'class'}}); return false;">Execute demo</a>
+
+<h2>_debug</h2>
+<pre class="php">
+//PHP
+$oPAX = new dsx\pax\Response();
+$oPAX->_debug('debug output', print_r($oPax,true));
+$oPAX->answer();
+</pre>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'_debug'}}); return false;">Debug to console</a>

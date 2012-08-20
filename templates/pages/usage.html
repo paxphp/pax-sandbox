@@ -1,13 +1,15 @@
 <h1>Usage</h1>
+
 <h2>Basic Usage</h2>
-<h3>Initialization</h3>
+
+<p>Initialize the code ...</p>
 <pre class="html">{{'
 //HTML
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="lib/dsx/PAX/jquery.PAX.js"></script>
+<script type="text/javascript" src="lib/dsx/pax/jquery.pax.js"></script>
 '|e}}</pre>
 
-<h3>Submit a request</h3>
+<p>... submit ...</p>
 <pre class="js">
 //JavaScript
 $.ajax({
@@ -16,10 +18,89 @@ $.ajax({
 });	
 </pre>
 
-<h3>Answer the request</h3>
+<p>... and answer the request.</p>
 <pre class="php">
 //PHP
-$oPAX = new dsx\PAX\Response();
+$oPAX = new dsx\pax\Response();
 $oPAX->alert('$_GET['do']');
 $oPAX->answer();
+</pre>
+
+<h2>Extend the code</h2>
+<p>If you want to add more shortcuts to access jQuery or other javascript logics from the backend you can easily extend PAX with some simple code.</p>
+
+<h3>Basic</h3>
+<p>Here I will demonstrate briefly how to extend PAX with an alert method.</p>
+<h4>Backend</h4>
+<p>Creating a backend method called 'alert' to alert content.</p>
+<pre class="php">
+//PHP
+class MyResponse extends dsx\pax\Responder{
+
+	/**
+	 * This method will generate a task with the action 'alert' and the parameter 'content'.
+	 */
+	public function alert($sContent){
+		$aArguments = array(
+						'content'=>$sContent
+						);
+		$sActionName = 'alert';
+		$this->addTask($aArguments, $sActionName);
+		return $this; //return $this to allow chaining
+	}
+}
+</pre>
+<h4>Frontend</h4>
+<p>Adding the front-end logic to our 'alert'-job. </p>
+<pre class="js">
+//JavaScript
+$.pax("addActions", {
+		alert : function(oJob){
+				alert(oJob.content); //oJob contains all the parameters
+		}
+});
+</pre>
+
+<h3>Minimal</h3>
+
+<h4>Backend</h4>
+<p>If you like minimal code or just want to use a convenient way of extending PAX then the following might be helpful.</p>
+<pre class="php">
+//PHP
+class MyResponse extends dsx\pax\Responder{
+
+	/**
+	 * the addTask method was designed to use the parent method name as the tasks ActionName 
+	 * and all provided arguments as parameters if not defined differently.
+	 * Parameters will be forwarded as numeric array!
+	 */
+	public function alert($sContent){
+		$this->addTask();
+		return $this;
+	};
+	
+	/**
+	 * This is using the PHP5.4 array syntax of providing arguments. 
+	 * With this you can use associative arrays instead of numeric. 
+	 * As you may have noticed: The action name in this example is also taken from the parent method name.
+	 */
+	public function alert2($sContent){
+		$this->addTask(['c'=>$sContent]);
+		return $this;
+	};
+	
+}
+</pre>
+<h4>Frontend</h4>
+<p>Adding the front-end logic to our 'alert'-job. Parameters are passed as a numeric array  when called with addTask() only. </p>
+<pre class="js">
+//JavaScript
+$.pax("addActions", {
+		alert : function(oJob){
+				alert(oJob[0]); //oJob contains all the parameters in a numeric array
+		},
+		alert2 : function(oJob){
+				alert(oJob.c); //oJob contains all the parameters in an associative array
+		}
+});
 </pre>

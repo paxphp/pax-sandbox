@@ -1,7 +1,7 @@
 <?php
 require_once 'bootstrap.php';
 
-$oPAX	= new dsx\PAX\Response();
+$oPAX	= new dsx\pax\Response();
 
 switch(isset($_GET['do'])?$_GET['do']:null){
 	case 'console':
@@ -28,6 +28,32 @@ switch(isset($_GET['do'])?$_GET['do']:null){
 	case 'attr-enabled':
 		$oPAX->attr('button.example-attr', 'disabled', false);
 		$oPAX->html('button.example-attr', 'Click (Enabled)');
+	break;
+	case '_debug':
+		$oPAX->_debug('debug output', print_r($oPAX,true));
+	break;
+	case 'css':
+		$oPAX->css('div.example-css', 'background-color','red');
+		$oPAX->css('div.example-css', 'color','white');
+		$oPAX->append('div.example-css p', ' Styles applied!');
+	break;
+	case 'css-reset':
+		$oPAX->css('div.example-css', 'background-color','');
+		$oPAX->css('div.example-css', 'color','');
+		$oPAX->append('div.example-css p', ' Styles removed!');
+	break;
+	case 'class':
+		$oPAX->addClass('div.example-addClass', 'example-blue');
+		$oPAX->removeClass('div.example-removeClass', 'example-blue');
+		$oPAX->removeClass('div.example-removeClassAll');
+	break;
+	case 'beforeafter':
+		$oPAX->before('div.example-before', 'Added before');
+		$oPAX->after('div.example-after', 'Added after');
+	break;
+	case 'prependappend':
+		$oPAX->prepend('div.example-prepend', 'Prepend content');
+		$oPAX->append('div.example-append', 'Append content');
 	break;
 }
 $oPAX->answer();
