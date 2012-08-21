@@ -1,6 +1,6 @@
-[submodule "lib/dsx/PAX"]
-	path = lib/dsx/PAX
-	url = https://github.com/dsNick/PAX.git
+[submodule "lib/dsx/pax"]
+	path = lib/dsx/pax
+	url = git://github.com/dsNick/pax.git
 [submodule "lib/twig"]
 	path = lib/twig
 	url = git://github.com/fabpot/Twig.git
