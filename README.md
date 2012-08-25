@@ -1,4 +1,4 @@
-PAX-Sandbox
+PHP Ajax Extension - Sandbox
 ===========
 
-Just the sandbox for PAX to see it in action
+This is the sandbox to see how it works and to give some explanation and documentation. Just download a copy and run it in your browser. Enjoy!
