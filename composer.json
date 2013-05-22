@@ -1,0 +1,14 @@
+{
+	"name" : "Dsx/pax-sandbox",
+	"type" : "project",
+	"keywords" : [
+		"pax",
+		"php",
+		"ajax"
+	],
+	"require" : {
+		"twig/twig" : "1.13.0",
+		"dsx/pax" : "master-dev",
+		"php" : ">=5.4"
+	}
+}
