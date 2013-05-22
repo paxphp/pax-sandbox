@@ -1,6 +1,6 @@
 <?php
 require_once 'bootstrap.php';
-use dsx\pax\Response;
+use \Dsx\Pax\Response;
 $oPAX	= new Response();
 $oTwig	= new Twig_Environment(new Twig_Loader_Filesystem(__DIR__."/templates"));
 
