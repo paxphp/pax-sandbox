@@ -8,6 +8,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
 <script type="text/javascript" src="vendor/pax/pax/jquery.pax.js"></script>
+<script type="text/javascript" src="js/toc.min.js"></script>
 
 <script type="text/javascript">
 <!--
@@ -21,5 +22,9 @@
 //-->
 </script>
 </head>
-<body></body>
+<body>
+<div id="wrapper">
+
+</div>
+</body>
 </html>

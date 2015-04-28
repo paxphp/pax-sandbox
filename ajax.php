@@ -7,7 +7,7 @@ $oTwig	= new Twig_Environment(new Twig_Loader_Filesystem(__DIR__."/templates"));
 
 switch(isset($_GET['do'])?$_GET['do']:null){
 	case 'initPage':
-		$oPAX->html('body',$oTwig->render('body.html'));
+		$oPAX->html('#wrapper',$oTwig->render('body.html'));
 		break;
 	case 'about':
 		$oPAX->html('#content',$oTwig->render('pages/about.html'));
