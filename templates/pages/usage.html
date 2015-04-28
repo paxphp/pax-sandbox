@@ -6,7 +6,7 @@
 <pre class="html">{{'
 //HTML
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="lib/dsx/pax/jquery.pax.js"></script>
+<script type="text/javascript" src="vendor/pax/pax/jquery.pax.js"></script>
 '|e}}</pre>
 
 <p>... submit ...</p>
@@ -21,7 +21,7 @@ $.ajax({
 <p>... and answer the request.</p>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->alert('$_GET['do']');
 $oPAX->answer();
 </pre>
@@ -35,7 +35,7 @@ $oPAX->answer();
 <p>Creating a backend method called 'alert' to alert content.</p>
 <pre class="php">
 //PHP
-class MyResponse extends Dsx\Pax\Responder{
+class MyResponse extends Pax\Responder{
 
 	/**
 	 * This method will generate a task with the action 'alert' and the parameter 'content'.
@@ -67,7 +67,7 @@ $.pax("addActions", {
 <p>If you like minimal code or just want to use a convenient way of extending PAX then the following might be helpful.</p>
 <pre class="php">
 //PHP
-class MyResponse extends Dsx\Pax\Responder{
+class MyResponse extends Pax\Responder{
 
 	/**
 	 * the addTask method was designed to use the parent method name as the tasks ActionName 

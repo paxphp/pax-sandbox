@@ -6,7 +6,7 @@
 <link href="http://www.steamdev.com/snippet/css/jquery.snippet.min.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="vendor/dsx/pax/jquery.pax.js"></script>
+<script type="text/javascript" src="vendor/pax/pax/jquery.pax.js"></script>
 <script type="text/javascript" src="http://www.steamdev.com/snippet/js/jquery.snippet.min.js"></script>
 <script type="text/javascript" src="https://raw.github.com/jgallen23/toc/master/dist/jquery.toc.min.js"></script>
 

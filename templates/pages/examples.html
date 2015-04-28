@@ -3,7 +3,7 @@
 <h2>alert</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->alert('This should be shown in the alert box!');
 $oPAX->answer();
 </pre>
@@ -12,7 +12,7 @@ $oPAX->answer();
 <h2>console</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->console('This should be shown in the console!');
 $oPAX->answer();
 </pre>
@@ -21,7 +21,7 @@ $oPAX->answer();
 <h2>html</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->html('div.example-html', 'This should be shown in the div container!');
 $oPAX->answer();
 </pre>
@@ -35,7 +35,7 @@ $oPAX->answer();
 <h2>bind</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->bind('button.example-bind', 'click', 'alert("binding an Alert!")');
 $oPAX->html('button.example-bind', 'Click (ON)');
 $oPAX->answer();
@@ -50,7 +50,7 @@ $oPAX->answer();
 <h2>unbind</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->unbind('button.example-bind', 'click');
 $oPAX->html('button.example-bind', 'Click (OFF)');
 $oPAX->answer();
@@ -65,7 +65,7 @@ $oPAX->answer();
 <h2>attr</h2>
 <pre class="php">
 //PHP - disable button
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->attr('button.example-attr', 'disabled', true);
 $oPAX->html('button.example-attr', 'Click (Disabled)');
 $oPAX->answer();
@@ -78,7 +78,7 @@ $oPAX->answer();
 <a href="#" onclick="$.ajax({url:'examples.php', data:{do:'attr-disabled'}}); return false;">Disabled button</a>
 <pre class="php">
 //PHP - enable button
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->attr('button.example-attr', 'disabled', false);
 $oPAX->html('button.example-attr', 'Click (Enabled)');
 $oPAX->answer();
@@ -93,7 +93,7 @@ $oPAX->answer();
 <h2>append / prepend</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->prepend('div.example-prepend', 'Prepend content');
 $oPAX->append('div.example-append', 'Append content');
 $oPAX->answer();
@@ -118,7 +118,7 @@ $oPAX->answer();
 <h2>before / after</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->before('div.example-before', 'Added before');
 $oPAX->after('div.example-after', 'Added after');
 $oPAX->answer();
@@ -143,7 +143,7 @@ $oPAX->answer();
 <h2>css</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->css('div.example-css', 'background-color','red');
 $oPAX->css('div.example-css', 'color','white');
 $oPAX->append('div.example-css p', ' Styles applied!');
@@ -164,7 +164,7 @@ $oPAX->answer();
 <h2>addClass / removeClass</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->addClass('div.example-addClass', 'example-blue');
 $oPAX->removeClass('div.example-removeClass', 'example-blue');
 $oPAX->removeClass('div.example-removeClassAll');
@@ -197,7 +197,7 @@ $oPAX->answer();
 <h2>_debug</h2>
 <pre class="php">
 //PHP
-$oPAX = new Dsx\Pax\Response();
+$oPAX = new Pax\Response();
 $oPAX->_debug('debug output', print_r($oPax,true));
 $oPAX->answer();
 </pre>

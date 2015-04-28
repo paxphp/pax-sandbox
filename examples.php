@@ -1,7 +1,7 @@
 <?php
 require_once 'bootstrap.php';
 
-$oPAX	= new Dsx\Pax\Response();
+$oPAX	= new Pax\Response();
 
 switch(isset($_GET['do'])?$_GET['do']:null){
 	case 'console':
