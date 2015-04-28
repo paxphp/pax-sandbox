@@ -3,3 +3,5 @@
 .settings/*
 /composer.phar
 /vendor/*
+
+composer.lock
