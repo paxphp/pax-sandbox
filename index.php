@@ -3,12 +3,11 @@
 <head>
 <title>PAX - phP Ajax eXtension</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="http://www.steamdev.com/snippet/css/jquery.snippet.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/zenburn.min.css">
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
 <script type="text/javascript" src="vendor/pax/pax/jquery.pax.js"></script>
-<script type="text/javascript" src="http://www.steamdev.com/snippet/js/jquery.snippet.min.js"></script>
-<script type="text/javascript" src="https://raw.github.com/jgallen23/toc/master/dist/jquery.toc.min.js"></script>
 
 <script type="text/javascript">
 <!--

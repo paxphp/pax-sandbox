@@ -24,8 +24,6 @@ switch(isset($_GET['do'])?$_GET['do']:null){
 		break;
 }
 $oPAX
-	->script('$("pre.php").snippet("php",{style:"bipolar",showNum:false,menu:false});')
-	->script('$("pre.html").snippet("html",{style:"bipolar",showNum:false,menu:false});')
-	->script('$("pre.js").snippet("javascript",{style:"bipolar",showNum:false,menu:false});')
+	->script("$('pre').each(function(i, block) {hljs.highlightBlock(block);});")
 	->script("$('#toc').toc({'onHighlight': function(el) {}});")
 	->answer();
