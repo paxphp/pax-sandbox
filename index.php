@@ -18,7 +18,8 @@
 	$.ajax({
 		data: {"do":"initPage"}
 	});
-	$.pax("addActions", {test : function(oJob){alert(oJob.c);}});
+	var pax = $(document).pax();
+	pax.action("test", function(oJob){alert(oJob.c);});
 //-->
 </script>
 </head>
