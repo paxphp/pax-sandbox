@@ -8,7 +8,7 @@
 	],
 	"require" : {
 		"twig/twig" : "~1.13",
-		"pax/pax" : "dev-master",
+		"pax/pax" : "~1.0",
 		"php" : ">=5.4"
 	}
 }
