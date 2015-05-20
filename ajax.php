@@ -23,7 +23,6 @@ switch(isset($_GET['do'])?$_GET['do']:null){
 		$oPAX->console(var_export($_REQUEST, true));
 		break;
 }
-$oPAX
-	->script("$('pre').each(function(i, block) {hljs.highlightBlock(block);});")
-	->script("$('#toc').toc({'onHighlight': function(el) {}});")
-	->answer();
+$oPAX->script("$('pre').each(function(i, block) {hljs.highlightBlock(block);});");
+$oPAX->script("$('#toc').toc({'onHighlight': function(el) {}});");
+$oPAX->answer();
