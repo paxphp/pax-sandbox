@@ -1,5 +1,38 @@
 <h1>Examples</h1>
 
+<h2>show / hide / toggle</h2>
+
+<pre class="php">
+$oPAX = new Pax\Response();
+$oPAX->show('div.example-showhidetoggle');
+//$oPAX->hide('div.example-showhidetoggle');
+//$oPAX->toggle('div.example-showhidetoggle');
+$oPAX->answer();
+</pre>
+<pre class="html">{{'
+//HTML
+<div class="example example-showhidetoggle">you can\'t see me</div>
+'|e}}</pre>
+
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'show'}});return false;">show element</a>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'hide'}});return false;">hide element</a>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'toggle'}});return false;">toggle element</a>
+
+<div class="example example-showhidetoggle">you can't see me</div>
+
+<h2>ReplaceWith</h2>
+<pre class="php">
+$oPAX = new Pax\Response();
+$oPAX->replaceWith('div.example-replacewith span', {{'"<span>"'|e}}.date('Y-m-d H:i:s').{{'"</span>"'|e}});
+$oPAX->answer();
+</pre>
+<pre class="html">{{'
+//HTML
+<div class="example replacewith"><span>Replace me</span></div>
+'|e}}</pre>
+<a href="#" onclick="$.ajax({url:'examples.php', data:{do:'replaceWith'}});return false;">execute demo</a>
+<div class="example example-replacewith"><span>Replace me</span></div>
+
 <h2>alert</h2>
 <pre class="php">
 //PHP

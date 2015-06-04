@@ -93,6 +93,12 @@ div.example-blue{
 div.example-bold{
 	font-weight: bold;
 }
+div.example-showhidetoggle{
+	border: 1px sold red;
+	background-color: blue;
+	padding: 5px;
+	color: white;
+}
 
 #wrapper {
 	margin: 0 20px 0 170px;	

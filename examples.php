@@ -4,6 +4,18 @@ require_once 'bootstrap.php';
 $oPAX	= new Pax\Response();
 
 switch(isset($_GET['do'])?$_GET['do']:null){
+	case 'show':
+		$oPAX->show('div.example-showhidetoggle');
+	break;
+	case 'hide':
+		$oPAX->hide('div.example-showhidetoggle');
+	break;
+	case 'toggle':
+		$oPAX->toggle('div.example-showhidetoggle');
+	break;
+	case 'replaceWith':
+		$oPAX->replaceWith('div.example-replacewith span', '<span>'.date('Y-m-d H:i:s').'</span>');
+	break;
 	case 'console':
 		$oPAX->console($_GET['content']);
 	break;
